@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星辰来信</title>
+    <style>
+        /* 基础样式保留 */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+        }
+
+        .shell {
+            width: 780px;
+            height: 580px;
+            background: #ffffff;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .head {
+            height: 340px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .head::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url("美女.jpg");
+            background-size: cover;
+            z-index: -1;
+            transform: skewY(-4deg);
+            transform-origin: 0 0;
+        }
+
+        .cover {
+            position: absolute;
+            top: 190px;
+            left: 25px;
+            width: 220px;
+            z-index: 2;
+            border-radius: 50%;
+            border: 10px #fff solid;
+            box-shadow: 0 5px 10px #00000065;
+            transition: transform 0.3s ease;
+        }
+
+        .cover:hover {
+            transform: scale(1.02);
+        }
+
+        .data {
+            padding: 200px 0 0 300px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .data .title1 {
+            color: white;
+            font: 900 42px/1.2 '华文行楷', cursive;
+            margin-bottom: 15px;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .data .title1 span {
+            position: absolute;
+            top: 22px;
+            margin-left: 15px;
+            background: #ffe44c;
+            border-radius: 5px;
+            color: #000000;
+            font: 600 14px/1.5 'PingFang SC';
+            padding: 2px 8px;
+            transform: rotate(-3deg);
+        }
+
+        .data .title2 {
+            color: rgba(255, 255, 255, 0.95);
+            font: 500 26px/1.4 '华文楷体';
+            letter-spacing: 1px;
+        }
+
+        .foot {
+            line-height: 1.6;
+            color: #444;
+            padding: 20px;
+        }
+
+        .tags {
+            width: 250px;
+            float: left;
+            padding: 30px;
+        }
+
+        .tag {
+            background: #95b2ff;
+            color: #fff;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 15px;
+            margin: 8px 0;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #eee4ad;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .introduce {
+            padding-top: 60px;
+            width: calc(100% - 280px);
+            float: left;
+            padding: 30px;
+            font: 16px/1.8 '华文楷体';
+            text-align: justify;
+        }
+
+        .introduce p {
+            margin-bottom: 25px;
+            text-indent: 2em;
+            white-space: pre-line;
+        }
+
+        /* 新增诗歌排版样式 */
+        .poem-section {
+            font-style: italic;
+            color: #666;
+            margin: 15px 0;
+            padding-left: 1em;
+            border-left: 3px solid #eee4ad;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="页面.html" class="back-btn">← 返回首页 (ESC)</a>
+
+    <div class="shell">
+        <img src="鲨鱼.jpg" alt="星辰来信封面" class="cover">
+        <div class="head">
+            <div class="data">
+                <div class="title1">一封来自远方的信<span>西安</span></div>
+                <div class="title2">沫云 丨 寄自候鸟驿站</div>
+            </div>
+        </div>
+        <div class="foot">
+
+            <div class="introduce">
+                <p class="poem-section">
+                    《致素未谋面的星辰》
+
+                    见字如晤：
+
+                    当晨露在鸢尾花瓣写下第一行诗时，我正倚着十二月的松木窗棂，用月光蘸笔为你写信。或许我们曾在某片飘落的银杏里擦肩，在某个暮色浸染的站台共享过晚风，此刻我的字迹正穿越无数星轨，叩响你十七岁的门扉。
+
+                    你窗外的梧桐树会记得，少年人的眼泪总比露珠轻盈。当课业压弯睫毛，当友谊生出细小裂痕，请留心观察被骤雨打湿的蝴蝶——它们晾晒翅膀的姿态，恰似命运在折叠信笺时暗藏的温柔伏笔。那些未解的方程式、未送达的书信、未说出口的告白，终会在某个月色如绸的夜晚，化作银河里游弋的碎钻。
+                </p>
+                <p class="poem-section">
+                    我见过野蔷薇如何用尖刺托举春天。若你途经荆棘丛生的荒原，不妨将心事系在蒲公英的降落伞上。每个清晨都该是崭新的画布：用橙汁在玻璃杯描绘日出，让钢笔在草稿纸跳圆舞曲，把数学公式改写成十四行诗。连檐角的风铃都知晓，少年人的叹息最宜佐以薄荷糖与蓝调音符。
+
+                    潮汐正在沙滩书写永恒的回文诗。你眉间蹙起的山峦会融化成溪流，指节缠绕的迷雾终将升起为云帆。当盛夏的蝉蜕在香樟树下空鸣，请代我亲吻掠过你发梢的季风——那是我托它捎来的，永不褪色的蔚蓝祝福。
+                </p>
+                <p class="poem-section">
+                    纸短情长，余言托付给掠过你窗台的第十二只白鸽。
+
+                    候鸟驿站某旅人
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 添加键盘事件监听 -->
+    <script>
+        // ESC键返回
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                window.location.href = '页面.html';
+            }
+        });
+
+        // 移动端触摸返回（可选）
+        let touchStartY = 0;
+        document.addEventListener('touchstart', e => {
+            touchStartY = e.touches[0].clientY;
+        }, false);
+
+        document.addEventListener('touchend', e => {
+            const touchEndY = e.changedTouches[0].clientY;
+            if (touchStartY - touchEndY > 100) { // 下滑返回
+                window.location.href = '页面.html';
+            }
+        }, false);
+    </script>
+</body>
+
+</html>

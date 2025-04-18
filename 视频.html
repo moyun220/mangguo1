@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            overflow-x: hidden;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 150vh auto 5vh;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(231, 76, 60, 0.3);
+        }
+
+        #main-video {
+            width: 100%;
+            height: 60vh;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+       
+
+        .fullscreen-btn:hover {
+            background: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        
+
+        .background {
+            background-image: url("赤发白.jpg");
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 200vh;
+            font: 900 39rem '';
+            line-height: 130vh;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .background::before {
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+
+        h1 {
+           
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 10px;
+            color: #fff;
+        }
+
+        h2 {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 120vh;
+            width: 60%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            background-color: rgba(0, 0, 0, .3);
+
+        }
+    </style>
+</head>
+
+<body>
+    <a href="页面.html" class="back-btn">← 返回首页 (ESC)</a>
+
+    <h1>bilibili<br />赤发白雪姬</h1>
+    <div class="background"><span>沫</span></div>
+    <h2>
+        <p>「赤い髪は私の誇り。逃げるために染めるなんて…絶対に嫌です」</p>
+
+        <p>（红发是我的骄傲，为了逃避而染发…我绝对不要）</p>
+
+        <p>—— 白雪 面对命运桎梏时的宣言</p>
+
+        <p>绯红发丝化作荆棘王冠，少女以倔强为刃，劈开世俗偏见。</p>
+
+        <p>「君が笑っている世界が、僕は好きだ」</p>
+
+        <p>（我喜欢你微笑时的世界）</p>
+
+        <p>—— 千·威斯塔利亚 凝望白雪的眼眸低语</p>
+
+        <p>王子的告白化作春风，将少女的勇气浇灌成漫天星辰。</p>
+
+        <p>「自分の足で立つために、私はここにいる」</p>
+
+        <p>（为了凭自己的双脚站立，我才来到这里）</p>
+
+        <p>—— 白雪在克拉利涅斯王国立下的誓言</p>
+
+        <P>药草芬芳中，独立灵魂挣脱金丝雀的牢笼，于云端筑巢。</P>
+
+        <p>「傷つくことを恐れて、本当に大切なものまで守れなくなるのは…もっと怖い」</p>
+
+        <p>（比起受伤，我更害怕因为畏惧受伤而失去真正珍贵之物）</p>
+
+        <p>—— 光秀 执剑守护时的独白</p>
+
+        <p>剑士的刀刃映出月光与觉悟，温柔与锋芒在此共生。</p>
+
+        <p>「あなたが選んだ道に、私も花を咲かせたい」</p>
+
+        <p>（我想在你选择的道路上，也绽放花朵）</p>
+
+        <p>—— 木木·塞兰 对友情的诠释</p>
+
+        <p>友情不是藤蔓的依附，而是两株木棉并肩生长，共触苍穹。</p>
+
+        <p>「運命なんて、自分で切り開くものだ」</p>
+
+        <p>（命运这种东西，是要亲手开拓的）</p>
+
+        <p>—— 拉冀 王子眺望国土时的沉吟</p>
+
+        <p>王族重负化作他眼底的星火，照亮变革者的荆棘之路。</p>
+    </h2>
+
+    
+    <script>
+
+        
+        const background = document.querySelector(".background")
+        
+        document.addEventListener('scroll', () => {
+            const scrollY = window.scrollY
+
+
+            if (scrollY !== 0) {
+                background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+            } else {
+                background.style.backgroundPosition = ''
+            }
+
+        })
+
+        
+
+        // ESC键返回
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                window.location.href = '页面.html';
+            }
+        });
+
+        // 移动端触摸返回（可选）
+        let touchStartY = 0;
+        document.addEventListener('touchstart', e => {
+            touchStartY = e.touches[0].clientY;
+        }, false);
+
+        document.addEventListener('touchend', e => {
+            const touchEndY = e.changedTouches[0].clientY;
+            if (touchStartY - touchEndY > 100) { // 下滑返回
+                window.location.href = '页面.html';
+            }
+        }, false);
+
+
+    </script>
+</body>
+
+</html>
